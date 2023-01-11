@@ -1,0 +1,12 @@
+---
+- name: redhat | Copy frr2juniper.pl
+  ansible.builtin.copy:
+    src: "files/frr2juniper.pl"
+    dest: "/etc/frr/frr2juniper.pl"
+    owner: "frr"
+    group: "frr"
+    mode: '0550'
+- name: redhat | Run frr2juniper.pl to built router info
+  become_user: frr
+  ansible.builtin.shell: /etc/frr/frr2juniper.pl
+    

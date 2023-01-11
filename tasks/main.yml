@@ -43,3 +43,5 @@
 
 - include_tasks: quagga.yml
   when: routing_type == "quagga"
+
+- include_tasks: rit.yml
